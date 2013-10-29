@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HW1ContLib</RootNamespace>
+    <AssemblyName>HW1ContLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseDialogBox.Designer.cs">
+      <DependentUpon>BaseDialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseMainForm.Designer.cs">
+      <DependentUpon>BaseMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseShapeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseShapeForm.Designer.cs">
+      <DependentUpon>BaseShapeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Coursebox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Coursebox.Designer.cs">
+      <DependentUpon>Coursebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Namebox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Namebox.Designer.cs">
+      <DependentUpon>Namebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oathbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Oathbox.Designer.cs">
+      <DependentUpon>Oathbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseDialogBox.resx">
+      <DependentUpon>BaseDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseMainForm.resx">
+      <DependentUpon>BaseMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseShapeForm.resx">
+      <DependentUpon>BaseShapeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coursebox.resx">
+      <DependentUpon>Coursebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Namebox.resx">
+      <DependentUpon>Namebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oathbox.resx">
+      <DependentUpon>Oathbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

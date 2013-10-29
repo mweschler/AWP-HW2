@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2", "Homework2\Homework2.csproj", "{6EB289B9-D6CF-4AF7-9A39-3EEF943AE23A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5AC4981-4676-4BFA-ADEE-E07F9F710F96} = {A5AC4981-4676-4BFA-ADEE-E07F9F710F96}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWContLib", "HW1ContLib\HWContLib.csproj", "{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +18,10 @@ Global
 		{6EB289B9-D6CF-4AF7-9A39-3EEF943AE23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB289B9-D6CF-4AF7-9A39-3EEF943AE23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB289B9-D6CF-4AF7-9A39-3EEF943AE23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
