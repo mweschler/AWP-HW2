@@ -16,11 +16,19 @@ namespace Homework2
     {
         private OathDialog oathDlg = null;
         private AboutDialog aboutDlg = null;
+
         private ShapeEnum selectedType = ShapeEnum.RECTANGLE;
+
         private Pen selectedPen;
         private Pen solidPen;
         private Pen dashedPen;
         private Pen compoundPen;
+
+        private Brush selectedBrush;
+        private Brush solidBrush;
+        private Brush hatchedBrush;
+        private Brush gradientBrush;
+
         private Color penColor = Color.Black;
         private Color brushColor = Color.Red;
 
@@ -35,7 +43,13 @@ namespace Homework2
 
             compoundPen = new Pen(penColor, 3);
             compoundPen.CompoundArray = new float[] { 0.0f, 0.3f, 0.45f, 0.55f, 0.7f, 1.0f};
+            
             selectedPen = solidPen;
+
+            solidBrush = new SolidBrush(brushColor);
+            hatchedBrush = new HatchBrush(HatchStyle.BackwardDiagonal, brushColor);
+            gradientBrush = new LinearGradientBrush(new Rectangle(0, 0, 10, 10), penColor, brushColor, 0.45f);
+            selectedBrush = solidBrush;
         }
 
         
@@ -70,7 +84,8 @@ namespace Homework2
         {
             ToolStripManager.Merge(mainMenuExtend, mainMenuStrip);
             rectangleToolStripMenuItem.Checked = true;
-            solidToolStripMenuItem.Checked = true;
+            solidPenToolStripMenuItem.Checked = true;
+            solidBrushToolStripMenuItem.Checked = true;
         }
 
         private void rectangleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,7 +115,7 @@ namespace Homework2
         private void solidToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.selectedPen = solidPen;
-            solidToolStripMenuItem.Checked = true;
+            solidPenToolStripMenuItem.Checked = true;
             dashedToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
         }
@@ -109,7 +124,7 @@ namespace Homework2
         {
             this.selectedPen = dashedPen;
             dashedToolStripMenuItem.Checked = true;
-            solidToolStripMenuItem.Checked = false;
+            solidPenToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
 
         }
@@ -118,8 +133,32 @@ namespace Homework2
         {
             this.selectedPen = compoundPen;
             compoundToolStripMenuItem.Checked = true;
-            solidToolStripMenuItem.Checked = false;
+            solidPenToolStripMenuItem.Checked = false;
             dashedToolStripMenuItem.Checked = false;
+        }
+
+        private void hatchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedBrush = hatchedBrush;
+            hatchToolStripMenuItem.Checked = true;
+            solidBrushToolStripMenuItem.Checked = false;
+            gradientToolStripMenuItem.Checked = false;
+        }
+
+        private void gradientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedBrush = gradientBrush;
+            gradientToolStripMenuItem.Checked = true;
+            solidBrushToolStripMenuItem.Checked = false;
+            hatchToolStripMenuItem.Checked = false;
+        }
+
+        private void solidBrushToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedBrush = solidBrush;
+            solidBrushToolStripMenuItem.Checked = true;
+            gradientToolStripMenuItem.Checked = false;
+            hatchToolStripMenuItem.Checked = false;
         }
 
     }

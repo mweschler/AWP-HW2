@@ -34,9 +34,13 @@
             this.ellipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.triangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solidPenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compoundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.brushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solidBrushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gradientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuExtend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +53,8 @@
             // 
             this.mainMenuExtend.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.shapeToolStripMenuItem,
-            this.penToolStripMenuItem});
+            this.penToolStripMenuItem,
+            this.brushToolStripMenuItem});
             this.mainMenuExtend.Location = new System.Drawing.Point(0, 0);
             this.mainMenuExtend.Name = "mainMenuExtend";
             this.mainMenuExtend.Size = new System.Drawing.Size(563, 24);
@@ -93,7 +98,7 @@
             // penToolStripMenuItem
             // 
             this.penToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.solidToolStripMenuItem,
+            this.solidPenToolStripMenuItem,
             this.dashedToolStripMenuItem,
             this.compoundToolStripMenuItem});
             this.penToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
@@ -102,12 +107,12 @@
             this.penToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.penToolStripMenuItem.Text = "Pen";
             // 
-            // solidToolStripMenuItem
+            // solidPenToolStripMenuItem
             // 
-            this.solidToolStripMenuItem.Name = "solidToolStripMenuItem";
-            this.solidToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.solidToolStripMenuItem.Text = "Solid";
-            this.solidToolStripMenuItem.Click += new System.EventHandler(this.solidToolStripMenuItem_Click);
+            this.solidPenToolStripMenuItem.Name = "solidPenToolStripMenuItem";
+            this.solidPenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.solidPenToolStripMenuItem.Text = "Solid";
+            this.solidPenToolStripMenuItem.Click += new System.EventHandler(this.solidToolStripMenuItem_Click);
             // 
             // dashedToolStripMenuItem
             // 
@@ -122,6 +127,39 @@
             this.compoundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.compoundToolStripMenuItem.Text = "Compound";
             this.compoundToolStripMenuItem.Click += new System.EventHandler(this.compoundToolStripMenuItem_Click);
+            // 
+            // brushToolStripMenuItem
+            // 
+            this.brushToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.solidBrushToolStripMenuItem,
+            this.hatchToolStripMenuItem,
+            this.gradientToolStripMenuItem});
+            this.brushToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.brushToolStripMenuItem.MergeIndex = 3;
+            this.brushToolStripMenuItem.Name = "brushToolStripMenuItem";
+            this.brushToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.brushToolStripMenuItem.Text = "Brush";
+            // 
+            // solidBrushToolStripMenuItem
+            // 
+            this.solidBrushToolStripMenuItem.Name = "solidBrushToolStripMenuItem";
+            this.solidBrushToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.solidBrushToolStripMenuItem.Text = "Solid";
+            this.solidBrushToolStripMenuItem.Click += new System.EventHandler(this.solidBrushToolStripMenuItem_Click);
+            // 
+            // hatchToolStripMenuItem
+            // 
+            this.hatchToolStripMenuItem.Name = "hatchToolStripMenuItem";
+            this.hatchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hatchToolStripMenuItem.Text = "Hatch";
+            this.hatchToolStripMenuItem.Click += new System.EventHandler(this.hatchToolStripMenuItem_Click);
+            // 
+            // gradientToolStripMenuItem
+            // 
+            this.gradientToolStripMenuItem.Name = "gradientToolStripMenuItem";
+            this.gradientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gradientToolStripMenuItem.Text = "Gradient";
+            this.gradientToolStripMenuItem.Click += new System.EventHandler(this.gradientToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
@@ -149,9 +187,13 @@
         private System.Windows.Forms.ToolStripMenuItem ellipseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem triangleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem penToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solidToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solidPenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compoundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem brushToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solidBrushToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gradientToolStripMenuItem;
 
     }
 }
