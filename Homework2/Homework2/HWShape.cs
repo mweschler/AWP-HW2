@@ -30,14 +30,8 @@ namespace Homework2
         /// </summary>
         public string TypeText
         {
-            get { 
-                switch (this.type) 
-                {
-                    case ShapeEnum.ELLIPSE: return "Ellipse";
-                    case ShapeEnum.RECTANGLE: return "Rectangle";
-                    case ShapeEnum.TRIANGLE: return "Triangle";
-                    default: return "Not set";
-                } 
+            get {
+                return typeToString(this.type);
             }
         }
 
@@ -94,6 +88,22 @@ namespace Homework2
             this.Scale = new Size(1, 1);
             this.Translation = new Point(0, 0);
             this.Rotation = 0.0f;
+        }
+
+        public HWShape(ShapeEnum type)
+        {
+            // TODO: Complete member initialization
+            this.type = type;
+        }
+
+        public static string typeToString(ShapeEnum type){
+            switch (type) 
+                {
+                    case ShapeEnum.ELLIPSE: return "Ellipse";
+                    case ShapeEnum.RECTANGLE: return "Rectangle";
+                    case ShapeEnum.TRIANGLE: return "Triangle";
+                    default: return "Not set";
+                } 
         }
 
     }
