@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Homework2
 {
-    public partial class AboutDialog : HW1ContLib.BaseDialogBox
+    public partial class AboutDialog : HWContLib.BaseDialogBox
     {
         public AboutDialog()
         {

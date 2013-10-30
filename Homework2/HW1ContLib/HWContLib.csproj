@@ -8,7 +8,7 @@
     <ProjectGuid>{A5AC4981-4676-4BFA-ADEE-E07F9F710F96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HW1ContLib</RootNamespace>
+    <RootNamespace>HWContLib</RootNamespace>
     <AssemblyName>HW1ContLib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HW1ContLib
+namespace HWContLib
 {
     public interface IShapeColor { 
         Color Color{get; set;}

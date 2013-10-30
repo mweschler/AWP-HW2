@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Homework2
 {
-    public partial class OathDialog : HW1ContLib.BaseDialogBox
+    public partial class OathDialog : HWContLib.BaseDialogBox
     {
         public OathDialog()
         {

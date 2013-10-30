@@ -1,4 +1,4 @@
-﻿namespace HW1ContLib
+﻿namespace HWContLib
 {
     partial class BaseMainForm
     {
@@ -37,7 +37,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.namebox1 = new HW1ContLib.Namebox();
+            this.namebox1 = new HWContLib.Namebox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();

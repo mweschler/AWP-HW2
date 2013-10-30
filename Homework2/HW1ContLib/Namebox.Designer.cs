@@ -1,4 +1,4 @@
-﻿namespace HW1ContLib
+﻿namespace HWContLib
 {
     partial class Namebox
     {

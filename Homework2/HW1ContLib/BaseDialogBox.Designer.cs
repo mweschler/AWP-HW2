@@ -1,4 +1,4 @@
-﻿namespace HW1ContLib
+﻿namespace HWContLib
 {
     partial class BaseDialogBox
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.innerPanel = new System.Windows.Forms.Panel();
-            this.courseboxBot = new HW1ContLib.Coursebox();
-            this.nameboxTop = new HW1ContLib.Namebox();
+            this.courseboxBot = new HWContLib.Coursebox();
+            this.nameboxTop = new HWContLib.Namebox();
             this.SuspendLayout();
             // 
             // innerPanel

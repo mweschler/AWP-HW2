@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.oathbox1 = new HW1ContLib.Oathbox();
+            this.oathbox1 = new HWContLib.Oathbox();
             this.innerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,6 @@
 
         #endregion
 
-        private HW1ContLib.Oathbox oathbox1;
+        private HWContLib.Oathbox oathbox1;
     }
 }

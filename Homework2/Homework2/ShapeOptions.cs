@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HW1ContLib;
+using HWContLib;
 
 namespace Homework2
 {
