@@ -3,7 +3,7 @@
 namespace Homework2
 {
 
-    enum ShapeEnum
+    public enum ShapeEnum
     { 
         RECTANGLE,
         ELLIPSE,

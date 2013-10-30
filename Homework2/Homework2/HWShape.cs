@@ -16,7 +16,7 @@ namespace Homework2
         private ShapeEnum type;
         private Point location;
         private Size size;
-        private Size scale;
+        private SizeF scale;
         private Point translation;
         private float rotation;
 
@@ -48,7 +48,7 @@ namespace Homework2
         /// <summary>
         /// The height/width scaling of the shape
         /// </summary>
-        public Size Scale { get; set; }
+        public SizeF Scale { get; set; }
 
         /// <summary>
         /// The translation of the shape
@@ -80,7 +80,7 @@ namespace Homework2
         /// Initializes a new shape of the supplied type
         /// </summary>
         /// <param name="type">Type of shape to initialize</param>
-        HWShape(ShapeEnum type) 
+        public HWShape(ShapeEnum type) 
         {
             this.Type = type;
             this.Location = new Point(0, 0);
@@ -88,12 +88,6 @@ namespace Homework2
             this.Scale = new Size(1, 1);
             this.Translation = new Point(0, 0);
             this.Rotation = 0.0f;
-        }
-
-        public HWShape(ShapeEnum type)
-        {
-            // TODO: Complete member initialization
-            this.type = type;
         }
 
         public static string typeToString(ShapeEnum type){
@@ -104,6 +98,17 @@ namespace Homework2
                     case ShapeEnum.TRIANGLE: return "Triangle";
                     default: return "Not set";
                 } 
+        }
+
+        public static ShapeEnum stringToType(string value) {
+            if (value.ToUpper().CompareTo("ELLIPSE") == 0)
+                return ShapeEnum.ELLIPSE;
+            if (value.ToUpper().CompareTo("RECTANGLE") == 0)
+                return ShapeEnum.RECTANGLE;
+            if (value.ToUpper().CompareTo("TRIANGLE") == 0)
+                return ShapeEnum.TRIANGLE;
+
+            throw new ArgumentException("String was not a ELLIPSE, RECTANGLE, or TRIANGLE");
         }
 
     }

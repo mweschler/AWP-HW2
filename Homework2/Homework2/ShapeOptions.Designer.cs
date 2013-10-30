@@ -32,41 +32,41 @@
             this.applyButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.propertiesPanel = new System.Windows.Forms.Panel();
+            this.splitProperties = new System.Windows.Forms.SplitContainer();
+            this.sizeGroupBox = new System.Windows.Forms.GroupBox();
+            this.sizeHeightTextBox = new System.Windows.Forms.TextBox();
+            this.sizeHeightLabel = new System.Windows.Forms.Label();
+            this.sizeWidthLabel = new System.Windows.Forms.Label();
+            this.sizeWidthTextBox = new System.Windows.Forms.TextBox();
+            this.locationGroup = new System.Windows.Forms.GroupBox();
+            this.locYLabel = new System.Windows.Forms.Label();
+            this.locYTextBox = new System.Windows.Forms.TextBox();
+            this.locXLabel = new System.Windows.Forms.Label();
+            this.locXTextBox = new System.Windows.Forms.TextBox();
             this.shapeCombo = new System.Windows.Forms.ComboBox();
             this.shapeLabel = new System.Windows.Forms.Label();
-            this.splitProperties = new System.Windows.Forms.SplitContainer();
-            this.locationGroup = new System.Windows.Forms.GroupBox();
-            this.locXTextBox = new System.Windows.Forms.TextBox();
-            this.locXLabel = new System.Windows.Forms.Label();
-            this.locYTextBox = new System.Windows.Forms.TextBox();
-            this.locYLabel = new System.Windows.Forms.Label();
-            this.sizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.sizeWidthTextBox = new System.Windows.Forms.TextBox();
-            this.sizeWidthLabel = new System.Windows.Forms.Label();
-            this.sizeHeightLabel = new System.Windows.Forms.Label();
-            this.sizeHeightTextBox = new System.Windows.Forms.TextBox();
-            this.rotationTextBox = new System.Windows.Forms.TextBox();
-            this.rotationLabel = new System.Windows.Forms.Label();
-            this.scaleGroup = new System.Windows.Forms.GroupBox();
-            this.scaleWidthTextBox = new System.Windows.Forms.TextBox();
-            this.scaleHeightTextBox = new System.Windows.Forms.TextBox();
-            this.scaleWidthLabel = new System.Windows.Forms.Label();
-            this.scaleHeigthLabel = new System.Windows.Forms.Label();
             this.translationGroup = new System.Windows.Forms.GroupBox();
-            this.transXTextBox = new System.Windows.Forms.TextBox();
-            this.transXLabel = new System.Windows.Forms.Label();
-            this.transYTextBox = new System.Windows.Forms.TextBox();
             this.transYLabel = new System.Windows.Forms.Label();
+            this.transYTextBox = new System.Windows.Forms.TextBox();
+            this.transXLabel = new System.Windows.Forms.Label();
+            this.transXTextBox = new System.Windows.Forms.TextBox();
+            this.scaleGroup = new System.Windows.Forms.GroupBox();
+            this.scaleHeigthLabel = new System.Windows.Forms.Label();
+            this.scaleWidthLabel = new System.Windows.Forms.Label();
+            this.scaleHeightTextBox = new System.Windows.Forms.TextBox();
+            this.scaleWidthTextBox = new System.Windows.Forms.TextBox();
+            this.rotationLabel = new System.Windows.Forms.Label();
+            this.rotationTextBox = new System.Windows.Forms.TextBox();
             this.innerPanel.SuspendLayout();
             this.propertiesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitProperties)).BeginInit();
             this.splitProperties.Panel1.SuspendLayout();
             this.splitProperties.Panel2.SuspendLayout();
             this.splitProperties.SuspendLayout();
-            this.locationGroup.SuspendLayout();
             this.sizeGroupBox.SuspendLayout();
-            this.scaleGroup.SuspendLayout();
+            this.locationGroup.SuspendLayout();
             this.translationGroup.SuspendLayout();
+            this.scaleGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // innerPanel
@@ -87,6 +87,7 @@
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // applyButton
             // 
@@ -97,6 +98,7 @@
             this.applyButton.TabIndex = 1;
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // okButton
             // 
@@ -107,6 +109,7 @@
             this.okButton.TabIndex = 2;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // propertiesPanel
             // 
@@ -117,30 +120,6 @@
             this.propertiesPanel.Name = "propertiesPanel";
             this.propertiesPanel.Size = new System.Drawing.Size(453, 258);
             this.propertiesPanel.TabIndex = 3;
-            // 
-            // shapeCombo
-            // 
-            this.shapeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.shapeCombo.FormattingEnabled = true;
-            this.shapeCombo.Items.AddRange(new object[] {
-            "Triangle",
-            "Ellipse",
-            "Rectangle"});
-            this.shapeCombo.Location = new System.Drawing.Point(102, 18);
-            this.shapeCombo.Name = "shapeCombo";
-            this.shapeCombo.Size = new System.Drawing.Size(118, 21);
-            this.shapeCombo.TabIndex = 0;
-            // 
-            // shapeLabel
-            // 
-            this.shapeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.shapeLabel.AutoSize = true;
-            this.shapeLabel.Location = new System.Drawing.Point(58, 21);
-            this.shapeLabel.Name = "shapeLabel";
-            this.shapeLabel.Size = new System.Drawing.Size(38, 13);
-            this.shapeLabel.TabIndex = 1;
-            this.shapeLabel.Text = "Shape";
-            this.shapeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // splitProperties
             // 
@@ -166,57 +145,6 @@
             this.splitProperties.SplitterDistance = 238;
             this.splitProperties.TabIndex = 2;
             // 
-            // locationGroup
-            // 
-            this.locationGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.locationGroup.Controls.Add(this.locYLabel);
-            this.locationGroup.Controls.Add(this.locYTextBox);
-            this.locationGroup.Controls.Add(this.locXLabel);
-            this.locationGroup.Controls.Add(this.locXTextBox);
-            this.locationGroup.Location = new System.Drawing.Point(0, 58);
-            this.locationGroup.Name = "locationGroup";
-            this.locationGroup.Size = new System.Drawing.Size(237, 81);
-            this.locationGroup.TabIndex = 2;
-            this.locationGroup.TabStop = false;
-            this.locationGroup.Text = "Location";
-            // 
-            // locXTextBox
-            // 
-            this.locXTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.locXTextBox.Location = new System.Drawing.Point(102, 19);
-            this.locXTextBox.Name = "locXTextBox";
-            this.locXTextBox.Size = new System.Drawing.Size(118, 20);
-            this.locXTextBox.TabIndex = 0;
-            // 
-            // locXLabel
-            // 
-            this.locXLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.locXLabel.AutoSize = true;
-            this.locXLabel.Location = new System.Drawing.Point(71, 22);
-            this.locXLabel.Name = "locXLabel";
-            this.locXLabel.Size = new System.Drawing.Size(17, 13);
-            this.locXLabel.TabIndex = 1;
-            this.locXLabel.Text = "X:";
-            // 
-            // locYTextBox
-            // 
-            this.locYTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.locYTextBox.Location = new System.Drawing.Point(102, 45);
-            this.locYTextBox.Name = "locYTextBox";
-            this.locYTextBox.Size = new System.Drawing.Size(118, 20);
-            this.locYTextBox.TabIndex = 2;
-            // 
-            // locYLabel
-            // 
-            this.locYLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.locYLabel.AutoSize = true;
-            this.locYLabel.Location = new System.Drawing.Point(71, 48);
-            this.locYLabel.Name = "locYLabel";
-            this.locYLabel.Size = new System.Drawing.Size(17, 13);
-            this.locYLabel.TabIndex = 3;
-            this.locYLabel.Text = "Y:";
-            // 
             // sizeGroupBox
             // 
             this.sizeGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -232,13 +160,23 @@
             this.sizeGroupBox.TabStop = false;
             this.sizeGroupBox.Text = "Size";
             // 
-            // sizeWidthTextBox
+            // sizeHeightTextBox
             // 
-            this.sizeWidthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeWidthTextBox.Location = new System.Drawing.Point(94, 19);
-            this.sizeWidthTextBox.Name = "sizeWidthTextBox";
-            this.sizeWidthTextBox.Size = new System.Drawing.Size(118, 20);
-            this.sizeWidthTextBox.TabIndex = 0;
+            this.sizeHeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeHeightTextBox.Location = new System.Drawing.Point(94, 45);
+            this.sizeHeightTextBox.Name = "sizeHeightTextBox";
+            this.sizeHeightTextBox.Size = new System.Drawing.Size(118, 20);
+            this.sizeHeightTextBox.TabIndex = 3;
+            // 
+            // sizeHeightLabel
+            // 
+            this.sizeHeightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeHeightLabel.AutoSize = true;
+            this.sizeHeightLabel.Location = new System.Drawing.Point(47, 48);
+            this.sizeHeightLabel.Name = "sizeHeightLabel";
+            this.sizeHeightLabel.Size = new System.Drawing.Size(41, 13);
+            this.sizeHeightLabel.TabIndex = 2;
+            this.sizeHeightLabel.Text = "Height:";
             // 
             // sizeWidthLabel
             // 
@@ -251,92 +189,88 @@
             this.sizeWidthLabel.Text = "Width:";
             this.sizeWidthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sizeHeightLabel
+            // sizeWidthTextBox
             // 
-            this.sizeHeightLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeHeightLabel.AutoSize = true;
-            this.sizeHeightLabel.Location = new System.Drawing.Point(47, 48);
-            this.sizeHeightLabel.Name = "sizeHeightLabel";
-            this.sizeHeightLabel.Size = new System.Drawing.Size(41, 13);
-            this.sizeHeightLabel.TabIndex = 2;
-            this.sizeHeightLabel.Text = "Height:";
+            this.sizeWidthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeWidthTextBox.Location = new System.Drawing.Point(94, 19);
+            this.sizeWidthTextBox.Name = "sizeWidthTextBox";
+            this.sizeWidthTextBox.Size = new System.Drawing.Size(118, 20);
+            this.sizeWidthTextBox.TabIndex = 0;
             // 
-            // sizeHeightTextBox
+            // locationGroup
             // 
-            this.sizeHeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeHeightTextBox.Location = new System.Drawing.Point(94, 45);
-            this.sizeHeightTextBox.Name = "sizeHeightTextBox";
-            this.sizeHeightTextBox.Size = new System.Drawing.Size(118, 20);
-            this.sizeHeightTextBox.TabIndex = 3;
-            // 
-            // rotationTextBox
-            // 
-            this.rotationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rotationTextBox.Location = new System.Drawing.Point(81, 14);
-            this.rotationTextBox.Name = "rotationTextBox";
-            this.rotationTextBox.Size = new System.Drawing.Size(118, 20);
-            this.rotationTextBox.TabIndex = 0;
-            // 
-            // rotationLabel
-            // 
-            this.rotationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rotationLabel.AutoSize = true;
-            this.rotationLabel.Location = new System.Drawing.Point(25, 18);
-            this.rotationLabel.Name = "rotationLabel";
-            this.rotationLabel.Size = new System.Drawing.Size(50, 13);
-            this.rotationLabel.TabIndex = 1;
-            this.rotationLabel.Text = "Rotation:";
-            // 
-            // scaleGroup
-            // 
-            this.scaleGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.locationGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scaleGroup.Controls.Add(this.scaleHeigthLabel);
-            this.scaleGroup.Controls.Add(this.scaleWidthLabel);
-            this.scaleGroup.Controls.Add(this.scaleHeightTextBox);
-            this.scaleGroup.Controls.Add(this.scaleWidthTextBox);
-            this.scaleGroup.Location = new System.Drawing.Point(1, 58);
-            this.scaleGroup.Name = "scaleGroup";
-            this.scaleGroup.Size = new System.Drawing.Size(209, 80);
-            this.scaleGroup.TabIndex = 2;
-            this.scaleGroup.TabStop = false;
-            this.scaleGroup.Text = "Scale";
+            this.locationGroup.Controls.Add(this.locYLabel);
+            this.locationGroup.Controls.Add(this.locYTextBox);
+            this.locationGroup.Controls.Add(this.locXLabel);
+            this.locationGroup.Controls.Add(this.locXTextBox);
+            this.locationGroup.Location = new System.Drawing.Point(0, 58);
+            this.locationGroup.Name = "locationGroup";
+            this.locationGroup.Size = new System.Drawing.Size(237, 81);
+            this.locationGroup.TabIndex = 2;
+            this.locationGroup.TabStop = false;
+            this.locationGroup.Text = "Location";
             // 
-            // scaleWidthTextBox
+            // locYLabel
             // 
-            this.scaleWidthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.scaleWidthTextBox.Location = new System.Drawing.Point(85, 19);
-            this.scaleWidthTextBox.Name = "scaleWidthTextBox";
-            this.scaleWidthTextBox.Size = new System.Drawing.Size(118, 20);
-            this.scaleWidthTextBox.TabIndex = 0;
+            this.locYLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.locYLabel.AutoSize = true;
+            this.locYLabel.Location = new System.Drawing.Point(71, 48);
+            this.locYLabel.Name = "locYLabel";
+            this.locYLabel.Size = new System.Drawing.Size(17, 13);
+            this.locYLabel.TabIndex = 3;
+            this.locYLabel.Text = "Y:";
             // 
-            // scaleHeightTextBox
+            // locYTextBox
             // 
-            this.scaleHeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.scaleHeightTextBox.Location = new System.Drawing.Point(85, 45);
-            this.scaleHeightTextBox.Name = "scaleHeightTextBox";
-            this.scaleHeightTextBox.Size = new System.Drawing.Size(118, 20);
-            this.scaleHeightTextBox.TabIndex = 1;
+            this.locYTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.locYTextBox.Location = new System.Drawing.Point(102, 45);
+            this.locYTextBox.Name = "locYTextBox";
+            this.locYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.locYTextBox.TabIndex = 2;
             // 
-            // scaleWidthLabel
+            // locXLabel
             // 
-            this.scaleWidthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.scaleWidthLabel.AutoSize = true;
-            this.scaleWidthLabel.Location = new System.Drawing.Point(41, 22);
-            this.scaleWidthLabel.Name = "scaleWidthLabel";
-            this.scaleWidthLabel.Size = new System.Drawing.Size(38, 13);
-            this.scaleWidthLabel.TabIndex = 2;
-            this.scaleWidthLabel.Text = "Width:";
+            this.locXLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.locXLabel.AutoSize = true;
+            this.locXLabel.Location = new System.Drawing.Point(71, 22);
+            this.locXLabel.Name = "locXLabel";
+            this.locXLabel.Size = new System.Drawing.Size(17, 13);
+            this.locXLabel.TabIndex = 1;
+            this.locXLabel.Text = "X:";
             // 
-            // scaleHeigthLabel
+            // locXTextBox
             // 
-            this.scaleHeigthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.scaleHeigthLabel.AutoSize = true;
-            this.scaleHeigthLabel.Location = new System.Drawing.Point(41, 48);
-            this.scaleHeigthLabel.Name = "scaleHeigthLabel";
-            this.scaleHeigthLabel.Size = new System.Drawing.Size(41, 13);
-            this.scaleHeigthLabel.TabIndex = 3;
-            this.scaleHeigthLabel.Text = "Height:";
+            this.locXTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.locXTextBox.Location = new System.Drawing.Point(102, 19);
+            this.locXTextBox.Name = "locXTextBox";
+            this.locXTextBox.Size = new System.Drawing.Size(118, 20);
+            this.locXTextBox.TabIndex = 0;
+            // 
+            // shapeCombo
+            // 
+            this.shapeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.shapeCombo.FormattingEnabled = true;
+            this.shapeCombo.Items.AddRange(new object[] {
+            "Triangle",
+            "Ellipse",
+            "Rectangle"});
+            this.shapeCombo.Location = new System.Drawing.Point(102, 18);
+            this.shapeCombo.Name = "shapeCombo";
+            this.shapeCombo.Size = new System.Drawing.Size(118, 21);
+            this.shapeCombo.TabIndex = 0;
+            // 
+            // shapeLabel
+            // 
+            this.shapeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.shapeLabel.AutoSize = true;
+            this.shapeLabel.Location = new System.Drawing.Point(58, 21);
+            this.shapeLabel.Name = "shapeLabel";
+            this.shapeLabel.Size = new System.Drawing.Size(38, 13);
+            this.shapeLabel.TabIndex = 1;
+            this.shapeLabel.Text = "Shape";
+            this.shapeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // translationGroup
             // 
@@ -353,13 +287,23 @@
             this.translationGroup.TabStop = false;
             this.translationGroup.Text = "Translation";
             // 
-            // transXTextBox
+            // transYLabel
             // 
-            this.transXTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.transXTextBox.Location = new System.Drawing.Point(80, 19);
-            this.transXTextBox.Name = "transXTextBox";
-            this.transXTextBox.Size = new System.Drawing.Size(118, 20);
-            this.transXTextBox.TabIndex = 0;
+            this.transYLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.transYLabel.AutoSize = true;
+            this.transYLabel.Location = new System.Drawing.Point(57, 52);
+            this.transYLabel.Name = "transYLabel";
+            this.transYLabel.Size = new System.Drawing.Size(17, 13);
+            this.transYLabel.TabIndex = 3;
+            this.transYLabel.Text = "Y:";
+            // 
+            // transYTextBox
+            // 
+            this.transYTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.transYTextBox.Location = new System.Drawing.Point(80, 48);
+            this.transYTextBox.Name = "transYTextBox";
+            this.transYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.transYTextBox.TabIndex = 2;
             // 
             // transXLabel
             // 
@@ -371,23 +315,82 @@
             this.transXLabel.TabIndex = 1;
             this.transXLabel.Text = "X:";
             // 
-            // transYTextBox
+            // transXTextBox
             // 
-            this.transYTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.transYTextBox.Location = new System.Drawing.Point(80, 48);
-            this.transYTextBox.Name = "transYTextBox";
-            this.transYTextBox.Size = new System.Drawing.Size(118, 20);
-            this.transYTextBox.TabIndex = 2;
+            this.transXTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.transXTextBox.Location = new System.Drawing.Point(80, 19);
+            this.transXTextBox.Name = "transXTextBox";
+            this.transXTextBox.Size = new System.Drawing.Size(118, 20);
+            this.transXTextBox.TabIndex = 0;
             // 
-            // transYLabel
+            // scaleGroup
             // 
-            this.transYLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.transYLabel.AutoSize = true;
-            this.transYLabel.Location = new System.Drawing.Point(57, 52);
-            this.transYLabel.Name = "transYLabel";
-            this.transYLabel.Size = new System.Drawing.Size(17, 13);
-            this.transYLabel.TabIndex = 3;
-            this.transYLabel.Text = "Y:";
+            this.scaleGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scaleGroup.Controls.Add(this.scaleHeigthLabel);
+            this.scaleGroup.Controls.Add(this.scaleWidthLabel);
+            this.scaleGroup.Controls.Add(this.scaleHeightTextBox);
+            this.scaleGroup.Controls.Add(this.scaleWidthTextBox);
+            this.scaleGroup.Location = new System.Drawing.Point(1, 58);
+            this.scaleGroup.Name = "scaleGroup";
+            this.scaleGroup.Size = new System.Drawing.Size(209, 80);
+            this.scaleGroup.TabIndex = 2;
+            this.scaleGroup.TabStop = false;
+            this.scaleGroup.Text = "Scale";
+            // 
+            // scaleHeigthLabel
+            // 
+            this.scaleHeigthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scaleHeigthLabel.AutoSize = true;
+            this.scaleHeigthLabel.Location = new System.Drawing.Point(41, 48);
+            this.scaleHeigthLabel.Name = "scaleHeigthLabel";
+            this.scaleHeigthLabel.Size = new System.Drawing.Size(41, 13);
+            this.scaleHeigthLabel.TabIndex = 3;
+            this.scaleHeigthLabel.Text = "Height:";
+            // 
+            // scaleWidthLabel
+            // 
+            this.scaleWidthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scaleWidthLabel.AutoSize = true;
+            this.scaleWidthLabel.Location = new System.Drawing.Point(41, 22);
+            this.scaleWidthLabel.Name = "scaleWidthLabel";
+            this.scaleWidthLabel.Size = new System.Drawing.Size(38, 13);
+            this.scaleWidthLabel.TabIndex = 2;
+            this.scaleWidthLabel.Text = "Width:";
+            // 
+            // scaleHeightTextBox
+            // 
+            this.scaleHeightTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scaleHeightTextBox.Location = new System.Drawing.Point(85, 45);
+            this.scaleHeightTextBox.Name = "scaleHeightTextBox";
+            this.scaleHeightTextBox.Size = new System.Drawing.Size(118, 20);
+            this.scaleHeightTextBox.TabIndex = 1;
+            // 
+            // scaleWidthTextBox
+            // 
+            this.scaleWidthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.scaleWidthTextBox.Location = new System.Drawing.Point(85, 19);
+            this.scaleWidthTextBox.Name = "scaleWidthTextBox";
+            this.scaleWidthTextBox.Size = new System.Drawing.Size(118, 20);
+            this.scaleWidthTextBox.TabIndex = 0;
+            // 
+            // rotationLabel
+            // 
+            this.rotationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rotationLabel.AutoSize = true;
+            this.rotationLabel.Location = new System.Drawing.Point(25, 18);
+            this.rotationLabel.Name = "rotationLabel";
+            this.rotationLabel.Size = new System.Drawing.Size(50, 13);
+            this.rotationLabel.TabIndex = 1;
+            this.rotationLabel.Text = "Rotation:";
+            // 
+            // rotationTextBox
+            // 
+            this.rotationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rotationTextBox.Location = new System.Drawing.Point(81, 14);
+            this.rotationTextBox.Name = "rotationTextBox";
+            this.rotationTextBox.Size = new System.Drawing.Size(118, 20);
+            this.rotationTextBox.TabIndex = 0;
             // 
             // ShapeOptions
             // 
@@ -398,6 +401,7 @@
             this.MinimumSize = new System.Drawing.Size(489, 496);
             this.Name = "ShapeOptions";
             this.Text = "Shape Properties";
+            this.Load += new System.EventHandler(this.ShapeOptions_Load);
             this.innerPanel.ResumeLayout(false);
             this.propertiesPanel.ResumeLayout(false);
             this.splitProperties.Panel1.ResumeLayout(false);
@@ -406,14 +410,14 @@
             this.splitProperties.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitProperties)).EndInit();
             this.splitProperties.ResumeLayout(false);
-            this.locationGroup.ResumeLayout(false);
-            this.locationGroup.PerformLayout();
             this.sizeGroupBox.ResumeLayout(false);
             this.sizeGroupBox.PerformLayout();
-            this.scaleGroup.ResumeLayout(false);
-            this.scaleGroup.PerformLayout();
+            this.locationGroup.ResumeLayout(false);
+            this.locationGroup.PerformLayout();
             this.translationGroup.ResumeLayout(false);
             this.translationGroup.PerformLayout();
+            this.scaleGroup.ResumeLayout(false);
+            this.scaleGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }

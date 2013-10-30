@@ -9,11 +9,11 @@ namespace Homework2
 {
     interface IShapeProperties
     {
-        public ShapeEnum Type;
-        public Point Location;
-        public Size Size;
-        public Size Scale;
-        public Point Translation;
-        public float Rotation;
+        ShapeEnum ShapeType {get; set;}
+        Point ShapeLocation {get; set;}
+        Size ShapeSize { get; set; }
+        SizeF ShapeScale { get; set; }
+        Point ShapeTranslation { get; set; }
+        float ShapeRotation { get; set; }
     }
 }

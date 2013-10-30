@@ -51,6 +51,7 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="HWShape.cs" />
+    <Compile Include="IAppliable.cs" />
     <Compile Include="IShapeProperties.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
