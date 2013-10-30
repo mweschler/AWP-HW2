@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ShapeOptions.resx">
       <DependentUpon>ShapeOptions.cs</DependentUpon>
@@ -114,6 +115,39 @@
       <Project>{a5ac4981-4676-4bfa-adee-e07f9f710f96}</Project>
       <Name>HWContLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ellipse.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triangle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solidPen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashedPen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compoundPen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solidBrush.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hatchBrush.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorButton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorBrushButton.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

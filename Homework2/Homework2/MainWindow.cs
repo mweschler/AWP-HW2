@@ -86,6 +86,9 @@ namespace Homework2
             rectangleToolStripMenuItem.Checked = true;
             solidPenToolStripMenuItem.Checked = true;
             solidBrushToolStripMenuItem.Checked = true;
+            rectButton.Checked = true;
+            solidPenButton.Checked = true;
+            solidBrushButton.Checked = true;
         }
 
         private void rectangleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +97,9 @@ namespace Homework2
             rectangleToolStripMenuItem.Checked = true;
             ellipseToolStripMenuItem.Checked = false;
             triangleToolStripMenuItem.Checked = false;
+            rectButton.Checked = true;
+            ellipseButton.Checked = false;
+            triangleButton.Checked = false;
         }
 
         private void ellipseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +108,9 @@ namespace Homework2
             ellipseToolStripMenuItem.Checked = true;
             rectangleToolStripMenuItem.Checked = false;
             triangleToolStripMenuItem.Checked = false;
+            ellipseButton.Checked = true;
+            rectButton.Checked = false;
+            triangleButton.Checked = false;
         }
 
         private void triangleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +119,9 @@ namespace Homework2
             triangleToolStripMenuItem.Checked = true;
             rectangleToolStripMenuItem.Checked = false;
             ellipseToolStripMenuItem.Checked = false;
+            triangleButton.Checked = true;
+            rectButton.Checked = false;
+            ellipseButton.Checked = false;
         }
 
         private void solidToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,6 +130,9 @@ namespace Homework2
             solidPenToolStripMenuItem.Checked = true;
             dashedToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
+            solidPenButton.Checked = true;
+            dashedPenButton.Checked = false;
+            compundPenButton.Checked = false;
         }
 
         private void dashedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,6 +141,9 @@ namespace Homework2
             dashedToolStripMenuItem.Checked = true;
             solidPenToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
+            dashedPenButton.Checked = true;
+            solidPenButton.Checked = false;
+            compundPenButton.Checked = false;
 
         }
 
@@ -135,6 +153,9 @@ namespace Homework2
             compoundToolStripMenuItem.Checked = true;
             solidPenToolStripMenuItem.Checked = false;
             dashedToolStripMenuItem.Checked = false;
+            compundPenButton.Checked = true;
+            solidPenButton.Checked = false;
+            dashedPenButton.Checked = false;
         }
 
         private void hatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,6 +164,9 @@ namespace Homework2
             hatchToolStripMenuItem.Checked = true;
             solidBrushToolStripMenuItem.Checked = false;
             gradientToolStripMenuItem.Checked = false;
+            hatchedBrushButton.Checked = true;
+            solidBrushButton.Checked = false;
+            gradientBrushButton.Checked = false;
         }
 
         private void gradientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,6 +175,9 @@ namespace Homework2
             gradientToolStripMenuItem.Checked = true;
             solidBrushToolStripMenuItem.Checked = false;
             hatchToolStripMenuItem.Checked = false;
+            gradientBrushButton.Checked = true;
+            solidBrushButton.Checked = false;
+            hatchedBrushButton.Checked = false;
         }
 
         private void solidBrushToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,6 +186,9 @@ namespace Homework2
             solidBrushToolStripMenuItem.Checked = true;
             gradientToolStripMenuItem.Checked = false;
             hatchToolStripMenuItem.Checked = false;
+            solidBrushButton.Checked = true;
+            hatchedBrushButton.Checked = false;
+            gradientBrushButton.Checked = false;
         }
 
         private static Color getColor(Color startcolor)
