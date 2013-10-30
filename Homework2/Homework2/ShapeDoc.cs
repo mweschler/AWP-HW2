@@ -12,7 +12,7 @@ namespace Homework2
     {
         private HWShape shape;
 
-        ShapeDoc(ShapeEnum type)
+        public ShapeDoc(ShapeEnum type)
         {
             shape = new HWShape(type);
         }

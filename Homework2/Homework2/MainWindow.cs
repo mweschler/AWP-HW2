@@ -32,6 +32,12 @@ namespace Homework2
         private Color penColor = Color.Black;
         private Color brushColor = Color.Red;
 
+        private bool isDrawing = false;
+        private Point mouseStart;
+        private ShapeDoc drawDoc = null;
+
+        private List<ShapeDoc> documents = new List<ShapeDoc>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -211,6 +217,31 @@ namespace Homework2
         private void setBrushColor(object sender, EventArgs e)
         {
             brushColor = getColor(brushColor);
+        }
+
+        private void mainPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && !isDrawing)
+            {
+                isDrawing = true;
+                mouseStart = new Point(e.X, e.Y);
+                drawDoc = new ShapeDoc(selectedType);
+            }
+        }
+
+        private void mainPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void mainPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (isDrawing) 
+            {
+                isDrawing = false;
+                documents.Add(drawDoc);
+                drawDoc = null;
+            }
         }
 
     }

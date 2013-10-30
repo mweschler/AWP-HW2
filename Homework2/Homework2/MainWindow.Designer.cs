@@ -67,6 +67,9 @@
             // 
             this.mainPanel.Location = new System.Drawing.Point(0, 24);
             this.mainPanel.Size = new System.Drawing.Size(563, 388);
+            this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
+            this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
+            this.mainPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseUp);
             // 
             // namebox1
             // 
