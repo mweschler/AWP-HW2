@@ -7,29 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 using HWContLib;
 
 namespace Homework2
 {
     public partial class MainWindow : BaseMainForm
     {
-        private enum PenType { 
-            SOLID,
-            DASHED,
-            COMPOUND
-        }
-
         private OathDialog oathDlg = null;
         private AboutDialog aboutDlg = null;
         private ShapeEnum selectedType = ShapeEnum.RECTANGLE;
-        private PenType selectedPen = PenType.SOLID;
+        private Pen selectedPen;
         private Pen solidPen;
         private Pen dashedPen;
         private Pen compoundPen;
+        private Color penColor = Color.Black;
+        private Color brushColor = Color.Red;
 
         public MainWindow()
         {
             InitializeComponent();
+            solidPen = new Pen(penColor, 3);
+            
+            dashedPen = new Pen(penColor, 3);
+            dashedPen.DashPattern = new float[] { 1.0f, 1.0f, 4.0f, 3.0f, 2.0f};
+            dashedPen.DashStyle = DashStyle.Custom;
+
+            compoundPen = new Pen(penColor, 3);
+            compoundPen.CompoundArray = new float[] { 0.0f, 0.3f, 0.45f, 0.55f, 0.7f, 1.0f};
+            selectedPen = solidPen;
         }
 
         
@@ -93,7 +99,7 @@ namespace Homework2
 
         private void solidToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.selectedPen = PenType.SOLID;
+            this.selectedPen = solidPen;
             solidToolStripMenuItem.Checked = true;
             dashedToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
@@ -101,7 +107,7 @@ namespace Homework2
 
         private void dashedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.selectedPen = PenType.DASHED;
+            this.selectedPen = dashedPen;
             dashedToolStripMenuItem.Checked = true;
             solidToolStripMenuItem.Checked = false;
             compoundToolStripMenuItem.Checked = false;
@@ -110,7 +116,7 @@ namespace Homework2
 
         private void compoundToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.selectedPen = PenType.COMPOUND;
+            this.selectedPen = compoundPen;
             compoundToolStripMenuItem.Checked = true;
             solidToolStripMenuItem.Checked = false;
             dashedToolStripMenuItem.Checked = false;
