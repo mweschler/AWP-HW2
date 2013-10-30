@@ -161,5 +161,27 @@ namespace Homework2
             hatchToolStripMenuItem.Checked = false;
         }
 
+        private static Color getColor(Color startcolor)
+        {
+            using (ColorDialog dlg = new ColorDialog())
+            {
+                dlg.Color = startcolor;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    return dlg.Color;
+
+                return startcolor;
+            }
+        }
+
+        private void setPenColor(object sender, EventArgs e)
+        {
+            penColor = getColor(penColor);
+        }
+
+        private void setBrushColor(object sender, EventArgs e)
+        {
+            brushColor = getColor(brushColor);
+        }
+
     }
 }

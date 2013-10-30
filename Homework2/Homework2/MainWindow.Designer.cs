@@ -41,6 +41,9 @@
             this.solidBrushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.brushToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuExtend.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +57,8 @@
             this.mainMenuExtend.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.shapeToolStripMenuItem,
             this.penToolStripMenuItem,
-            this.brushToolStripMenuItem});
+            this.brushToolStripMenuItem,
+            this.colorToolStripMenuItem});
             this.mainMenuExtend.Location = new System.Drawing.Point(0, 0);
             this.mainMenuExtend.Name = "mainMenuExtend";
             this.mainMenuExtend.Size = new System.Drawing.Size(563, 24);
@@ -161,6 +165,31 @@
             this.gradientToolStripMenuItem.Text = "Gradient";
             this.gradientToolStripMenuItem.Click += new System.EventHandler(this.gradientToolStripMenuItem_Click);
             // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.penToolStripMenuItem1,
+            this.brushToolStripMenuItem1});
+            this.colorToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.colorToolStripMenuItem.MergeIndex = 4;
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.colorToolStripMenuItem.Text = "Color";
+            // 
+            // penToolStripMenuItem1
+            // 
+            this.penToolStripMenuItem1.Name = "penToolStripMenuItem1";
+            this.penToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.penToolStripMenuItem1.Text = "Pen";
+            this.penToolStripMenuItem1.Click += new System.EventHandler(this.setPenColor);
+            // 
+            // brushToolStripMenuItem1
+            // 
+            this.brushToolStripMenuItem1.Name = "brushToolStripMenuItem1";
+            this.brushToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.brushToolStripMenuItem1.Text = "Brush";
+            this.brushToolStripMenuItem1.Click += new System.EventHandler(this.setBrushColor);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +223,9 @@
         private System.Windows.Forms.ToolStripMenuItem solidBrushToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gradientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem penToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem brushToolStripMenuItem1;
 
     }
 }
