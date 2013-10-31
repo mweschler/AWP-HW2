@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.IO;
 using HWContLib;
 
 namespace Homework2
@@ -16,6 +17,7 @@ namespace Homework2
     {
         private OathDialog oathDlg = null;
         private AboutDialog aboutDlg = null;
+        private ToolStripStatusLabel statusLabel = new ToolStripStatusLabel();
 
         private ShapeEnum selectedType = ShapeEnum.RECTANGLE;
 
@@ -56,9 +58,52 @@ namespace Homework2
             hatchedBrush = new HatchBrush(HatchStyle.BackwardDiagonal, brushColor);
             gradientBrush = new LinearGradientBrush(new Rectangle(0, 0, 10, 10), penColor, brushColor, 0.45f);
             selectedBrush = solidBrush;
+
+            this.mainStatusStrip.Items.Add(statusLabel);
+            statusLabel.Spring = true;
+            statusLabel.TextAlign = ContentAlignment.MiddleCenter;
+            updateStausText();
+            
         }
 
-        
+        private void updateStausText() 
+        {
+            using (StringWriter sw = new StringWriter()) 
+            {
+                sw.Write("Shape [");
+                switch (selectedType)
+                {
+                    case ShapeEnum.RECTANGLE: sw.Write("Rectangle"); break;
+                    case ShapeEnum.ELLIPSE: sw.Write("Ellipse"); break;
+                    case ShapeEnum.TRIANGLE: sw.Write("Triangle"); break;
+                }
+
+                sw.Write("] | Pen  [");
+                if(selectedPen.Equals(solidPen))
+                    sw.Write("Solid");
+                if(selectedPen.Equals(dashedPen))
+                    sw.Write("Dashed");
+                if (selectedPen.Equals(compoundPen))
+                    sw.Write("Compund");
+
+                sw.Write("] Pen ");
+                sw.Write(penColor);
+                
+                sw.Write(" | Brush [");
+
+                if (selectedBrush is SolidBrush)
+                    sw.Write("Solid");
+                if (selectedBrush is HatchBrush)
+                    sw.Write("Hatched");
+                if (selectedBrush is LinearGradientBrush)
+                    sw.Write("Gradient");
+
+                sw.Write("] Brush ");
+                sw.Write(brushColor);
+
+                this.statusLabel.Text = sw.ToString();
+            }
+        }
 
         override protected void oathToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -106,6 +151,7 @@ namespace Homework2
             rectButton.Checked = true;
             ellipseButton.Checked = false;
             triangleButton.Checked = false;
+            updateStausText();
         }
 
         private void ellipseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,6 +163,7 @@ namespace Homework2
             ellipseButton.Checked = true;
             rectButton.Checked = false;
             triangleButton.Checked = false;
+            updateStausText();
         }
 
         private void triangleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,6 +175,7 @@ namespace Homework2
             triangleButton.Checked = true;
             rectButton.Checked = false;
             ellipseButton.Checked = false;
+            updateStausText();
         }
 
         private void solidToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,6 +187,7 @@ namespace Homework2
             solidPenButton.Checked = true;
             dashedPenButton.Checked = false;
             compundPenButton.Checked = false;
+            updateStausText();
         }
 
         private void dashedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,6 +199,7 @@ namespace Homework2
             dashedPenButton.Checked = true;
             solidPenButton.Checked = false;
             compundPenButton.Checked = false;
+            updateStausText();
 
         }
 
@@ -162,6 +212,7 @@ namespace Homework2
             compundPenButton.Checked = true;
             solidPenButton.Checked = false;
             dashedPenButton.Checked = false;
+            updateStausText();
         }
 
         private void hatchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,6 +224,7 @@ namespace Homework2
             hatchedBrushButton.Checked = true;
             solidBrushButton.Checked = false;
             gradientBrushButton.Checked = false;
+            updateStausText();
         }
 
         private void gradientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,6 +236,7 @@ namespace Homework2
             gradientBrushButton.Checked = true;
             solidBrushButton.Checked = false;
             hatchedBrushButton.Checked = false;
+            updateStausText();
         }
 
         private void solidBrushToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +248,7 @@ namespace Homework2
             solidBrushButton.Checked = true;
             hatchedBrushButton.Checked = false;
             gradientBrushButton.Checked = false;
+            updateStausText();
         }
 
         private static Color getColor(Color startcolor)
@@ -212,11 +266,13 @@ namespace Homework2
         private void setPenColor(object sender, EventArgs e)
         {
             penColor = getColor(penColor);
+            updateStausText();
         }
 
         private void setBrushColor(object sender, EventArgs e)
         {
             brushColor = getColor(brushColor);
+            updateStausText();
         }
 
         private void mainPanel_MouseDown(object sender, MouseEventArgs e)

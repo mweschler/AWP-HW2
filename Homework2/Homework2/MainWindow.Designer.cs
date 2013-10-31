@@ -45,18 +45,18 @@
             this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.brushToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.rectButton = new System.Windows.Forms.ToolStripButton();
             this.ellipseButton = new System.Windows.Forms.ToolStripButton();
             this.triangleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.solidPenButton = new System.Windows.Forms.ToolStripButton();
             this.dashedPenButton = new System.Windows.Forms.ToolStripButton();
             this.compundPenButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.solidBrushButton = new System.Windows.Forms.ToolStripButton();
             this.hatchedBrushButton = new System.Windows.Forms.ToolStripButton();
             this.gradientBrushButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.penColorButton = new System.Windows.Forms.ToolStripButton();
             this.brushColorButton = new System.Windows.Forms.ToolStripButton();
             this.mainMenuExtend.SuspendLayout();
@@ -66,7 +66,7 @@
             // mainPanel
             // 
             this.mainPanel.Location = new System.Drawing.Point(0, 24);
-            this.mainPanel.Size = new System.Drawing.Size(563, 388);
+            this.mainPanel.Size = new System.Drawing.Size(724, 465);
             this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
             this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
             this.mainPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseUp);
@@ -74,6 +74,7 @@
             // namebox1
             // 
             this.namebox1.Location = new System.Drawing.Point(0, 49);
+            this.namebox1.Size = new System.Drawing.Size(724, 78);
             // 
             // mainMenuExtend
             // 
@@ -233,24 +234,9 @@
             this.brushColorButton});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 24);
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(563, 25);
+            this.mainToolStrip.Size = new System.Drawing.Size(724, 25);
             this.mainToolStrip.TabIndex = 5;
             this.mainToolStrip.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // rectButton
             // 
@@ -284,6 +270,11 @@
             this.triangleButton.Text = "toolStripButton3";
             this.triangleButton.Click += new System.EventHandler(this.triangleToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // solidPenButton
             // 
             this.solidPenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -313,6 +304,11 @@
             this.compundPenButton.Size = new System.Drawing.Size(23, 22);
             this.compundPenButton.Text = "toolStripButton6";
             this.compundPenButton.Click += new System.EventHandler(this.compoundToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // solidBrushButton
             // 
@@ -344,6 +340,11 @@
             this.gradientBrushButton.Text = "toolStripButton9";
             this.gradientBrushButton.Click += new System.EventHandler(this.gradientToolStripMenuItem_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
             // penColorButton
             // 
             this.penColorButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -368,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 434);
+            this.ClientSize = new System.Drawing.Size(724, 511);
             this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.mainMenuExtend);
             this.Name = "MainWindow";
