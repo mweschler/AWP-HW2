@@ -2,7 +2,9 @@
 
 namespace Homework2
 {
-
+    /// <summary>
+    /// Represents the types of shapes allowed in this program
+    /// </summary>
     public enum ShapeEnum
     { 
         RECTANGLE,

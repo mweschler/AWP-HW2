@@ -24,11 +24,12 @@ namespace Homework2
         {
             get 
             {
-                return HWShape.stringToType(this.shapeCombo.SelectedText);
+                return HWShape.stringToType(this.shapeCombo.SelectedItem as string);
             }
             set 
             {
-                this.shapeCombo.SelectedText = HWShape.typeToString(value);
+                this.shapeCombo.SelectedItem = HWShape.typeToString(value);
+                //this.shapeCombo.SelectedText = HWShape.typeToString(value);
             }
         }
 
@@ -66,7 +67,7 @@ namespace Homework2
         {
             get
             {
-                return new SizeF(float.Parse(this.scaleWidthLabel.Text),
+                return new SizeF(float.Parse(this.scaleWidthTextBox.Text),
                     float.Parse(this.scaleHeightTextBox.Text));
             }
 
@@ -128,6 +129,91 @@ namespace Homework2
         {
             if (this.Modal)
                 applyButton.Enabled = false;
+        }
+
+        //Validate any integer
+        private void validateIntTextBox(object sender, CancelEventArgs e)
+        {
+            if (!(sender is TextBox))
+                return;
+
+            string error = "";
+
+            TextBox textBox = sender as TextBox;
+            int value;
+
+            if (!int.TryParse(textBox.Text, out value))
+            {
+                e.Cancel = true;
+                error = "Not a valid integer";
+            }
+
+            errorProvider.SetError(textBox, error);
+
+        }
+
+        //validate a non negative integer
+        private void validateIntNoNegative(object sender, CancelEventArgs e)
+        {
+            if (!(sender is TextBox))
+                return;
+
+            string error = "";
+            TextBox textBox = sender as TextBox;
+
+            int value;
+            if (!int.TryParse(textBox.Text, out value))
+            {
+                error = "Not a valid integer";
+                e.Cancel = true;
+            }
+
+            if (value < 0)
+            {
+                e.Cancel = true;
+                error = "Number must not be negative";
+            }
+
+            errorProvider.SetError(textBox, error);
+        }
+
+        //validate any float
+        private void validateFloat(object sender, CancelEventArgs e)
+        {
+            if (!(sender is TextBox))
+                return;
+
+            string error = "";
+            TextBox textBox = sender as TextBox;
+
+            float value;
+            if (!float.TryParse(textBox.Text, out value))
+            {
+                e.Cancel = true;
+                error = "Not a valid floating point number";
+            }
+
+            errorProvider.SetError(textBox, error);
+        }
+
+        //validate combo box with only supplied options
+        private void shapeCombo_Validating(object sender, CancelEventArgs e)
+        {
+            ComboBox box = sender as ComboBox;
+
+            string error = "";
+
+            string item = box.SelectedItem as string;
+            if (!(item == "Rectangle" ||
+                item == "Ellipse" ||
+                item == "Triangle"))
+            {
+
+                error = "Must choose a valid shape from the combobox";
+                e.Cancel = true;
+            }
+
+            errorProvider.SetError(box, error);
         }
 
 

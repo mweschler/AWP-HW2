@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cancelButton = new System.Windows.Forms.Button();
             this.applyButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
             this.propertiesPanel = new System.Windows.Forms.Panel();
             this.splitProperties = new System.Windows.Forms.SplitContainer();
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
@@ -57,6 +57,7 @@
             this.scaleWidthTextBox = new System.Windows.Forms.TextBox();
             this.rotationLabel = new System.Windows.Forms.Label();
             this.rotationTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.innerPanel.SuspendLayout();
             this.propertiesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitProperties)).BeginInit();
@@ -67,12 +68,12 @@
             this.locationGroup.SuspendLayout();
             this.translationGroup.SuspendLayout();
             this.scaleGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // innerPanel
             // 
             this.innerPanel.Controls.Add(this.propertiesPanel);
-            this.innerPanel.Controls.Add(this.okButton);
             this.innerPanel.Controls.Add(this.applyButton);
             this.innerPanel.Controls.Add(this.cancelButton);
             this.innerPanel.Padding = new System.Windows.Forms.Padding(10);
@@ -85,7 +86,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 0;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "Close";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -99,17 +100,6 @@
             this.applyButton.Text = "Apply";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
-            // 
-            // okButton
-            // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(214, 280);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 2;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // propertiesPanel
             // 
@@ -167,6 +157,7 @@
             this.sizeHeightTextBox.Name = "sizeHeightTextBox";
             this.sizeHeightTextBox.Size = new System.Drawing.Size(118, 20);
             this.sizeHeightTextBox.TabIndex = 3;
+            this.sizeHeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntNoNegative);
             // 
             // sizeHeightLabel
             // 
@@ -196,6 +187,7 @@
             this.sizeWidthTextBox.Name = "sizeWidthTextBox";
             this.sizeWidthTextBox.Size = new System.Drawing.Size(118, 20);
             this.sizeWidthTextBox.TabIndex = 0;
+            this.sizeWidthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntNoNegative);
             // 
             // locationGroup
             // 
@@ -229,6 +221,7 @@
             this.locYTextBox.Name = "locYTextBox";
             this.locYTextBox.Size = new System.Drawing.Size(118, 20);
             this.locYTextBox.TabIndex = 2;
+            this.locYTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntNoNegative);
             // 
             // locXLabel
             // 
@@ -247,6 +240,7 @@
             this.locXTextBox.Name = "locXTextBox";
             this.locXTextBox.Size = new System.Drawing.Size(118, 20);
             this.locXTextBox.TabIndex = 0;
+            this.locXTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntNoNegative);
             // 
             // shapeCombo
             // 
@@ -260,6 +254,7 @@
             this.shapeCombo.Name = "shapeCombo";
             this.shapeCombo.Size = new System.Drawing.Size(118, 21);
             this.shapeCombo.TabIndex = 0;
+            this.shapeCombo.Validating += new System.ComponentModel.CancelEventHandler(this.shapeCombo_Validating);
             // 
             // shapeLabel
             // 
@@ -304,6 +299,7 @@
             this.transYTextBox.Name = "transYTextBox";
             this.transYTextBox.Size = new System.Drawing.Size(118, 20);
             this.transYTextBox.TabIndex = 2;
+            this.transYTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntTextBox);
             // 
             // transXLabel
             // 
@@ -322,6 +318,7 @@
             this.transXTextBox.Name = "transXTextBox";
             this.transXTextBox.Size = new System.Drawing.Size(118, 20);
             this.transXTextBox.TabIndex = 0;
+            this.transXTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntTextBox);
             // 
             // scaleGroup
             // 
@@ -365,6 +362,7 @@
             this.scaleHeightTextBox.Name = "scaleHeightTextBox";
             this.scaleHeightTextBox.Size = new System.Drawing.Size(118, 20);
             this.scaleHeightTextBox.TabIndex = 1;
+            this.scaleHeightTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateFloat);
             // 
             // scaleWidthTextBox
             // 
@@ -373,6 +371,7 @@
             this.scaleWidthTextBox.Name = "scaleWidthTextBox";
             this.scaleWidthTextBox.Size = new System.Drawing.Size(118, 20);
             this.scaleWidthTextBox.TabIndex = 0;
+            this.scaleWidthTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateFloat);
             // 
             // rotationLabel
             // 
@@ -391,6 +390,11 @@
             this.rotationTextBox.Name = "rotationTextBox";
             this.rotationTextBox.Size = new System.Drawing.Size(118, 20);
             this.rotationTextBox.TabIndex = 0;
+            this.rotationTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateIntTextBox);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // ShapeOptions
             // 
@@ -418,6 +422,7 @@
             this.translationGroup.PerformLayout();
             this.scaleGroup.ResumeLayout(false);
             this.scaleGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +434,6 @@
         private System.Windows.Forms.GroupBox locationGroup;
         private System.Windows.Forms.ComboBox shapeCombo;
         private System.Windows.Forms.Label shapeLabel;
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label locXLabel;
@@ -453,6 +457,7 @@
         private System.Windows.Forms.TextBox scaleWidthTextBox;
         private System.Windows.Forms.Label rotationLabel;
         private System.Windows.Forms.TextBox rotationTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider;
 
     }
 }

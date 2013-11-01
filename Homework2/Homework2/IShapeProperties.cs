@@ -7,6 +7,9 @@ using System.Drawing;
 
 namespace Homework2
 {
+    /// <summary>
+    /// The properties of a shape
+    /// </summary>
     interface IShapeProperties
     {
         ShapeEnum ShapeType {get; set;}

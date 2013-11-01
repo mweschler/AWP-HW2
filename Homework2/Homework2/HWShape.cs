@@ -13,12 +13,6 @@ namespace Homework2
     /// </summary>
     class HWShape
     {
-        private ShapeEnum type;
-        private Point location;
-        private Size size;
-        private SizeF scale;
-        private Point translation;
-        private float rotation;
 
         /// <summary>
         /// The type of shape
@@ -31,7 +25,7 @@ namespace Homework2
         public string TypeText
         {
             get {
-                return typeToString(this.type);
+                return typeToString(this.Type);
             }
         }
 
@@ -68,11 +62,66 @@ namespace Homework2
             get 
             {
                 Matrix transform = new Matrix();
+
                 transform.Translate(Translation.X, Translation.Y);
                 transform.Scale(Scale.Width, Scale.Height);
-                transform.Rotate(Rotation);
+
+                //rotate around the center of this object
+                PointF rotationPoint = new PointF(Location.X + (Size.Width / 2.0f), 
+                    Location.Y + (Size.Height / 2.0f));
+                transform.RotateAt(Rotation, rotationPoint);  
 
                 return transform;
+            }
+        }
+
+        /// <summary>
+        /// Gets a rectangle bounds of this shape
+        /// </summary>
+        public Rectangle Rectangle
+        {
+            get
+            {
+                Rectangle rect = new Rectangle(this.Location, this.Size);
+
+                //if the width or height is negative make the location the upper left most point
+                if (this.Size.Width < 0)
+                {
+                    Point loc = rect.Location;
+                    loc.X = loc.X + rect.Size.Width;
+                    rect.Location = loc;
+
+                    Size size = rect.Size;
+                    size.Width = Math.Abs(size.Width);
+                    rect.Size = size;
+                }
+
+                if (this.Size.Height < 0)
+                {
+                    Point loc = rect.Location;
+                    loc.Y = loc.Y + rect.Size.Height;
+                    rect.Location = loc;
+
+                    Size size = rect.Size;
+                    size.Height = Math.Abs(size.Height);
+                    rect.Size = size;
+                }
+
+                return rect;
+            }
+        }
+
+        /// <summary>
+        /// Gets the points for a triangle of this shape
+        /// </summary>
+        public Point[] TrianglePoints {
+            get
+            {
+                return (new Point[] {this.Location,
+                        new Point(this.Location.X, this.Location.Y + this.Size.Height),
+                        new Point(this.Location.X + this.Size.Width,
+                            this.Location.Y + this.Size.Height)
+                    });
             }
         }
         
@@ -90,16 +139,27 @@ namespace Homework2
             this.Rotation = 0.0f;
         }
 
+        
+        /// <summary>
+        /// Converts a type to a string
+        /// </summary>
+        /// <param name="type">type to convert</param>
+        /// <returns>string for the type</returns>
         public static string typeToString(ShapeEnum type){
             switch (type) 
                 {
                     case ShapeEnum.ELLIPSE: return "Ellipse";
                     case ShapeEnum.RECTANGLE: return "Rectangle";
                     case ShapeEnum.TRIANGLE: return "Triangle";
-                    default: return "Not set";
+                    default: return "Not set";//should never be true
                 } 
         }
 
+        /// <summary>
+        /// Converts a string to the type enumeration
+        /// </summary>
+        /// <param name="value">string to convert</param>
+        /// <returns>type the string represents</returns>
         public static ShapeEnum stringToType(string value) {
             if (value.ToUpper().CompareTo("ELLIPSE") == 0)
                 return ShapeEnum.ELLIPSE;
@@ -108,7 +168,36 @@ namespace Homework2
             if (value.ToUpper().CompareTo("TRIANGLE") == 0)
                 return ShapeEnum.TRIANGLE;
 
+            //only accept correct arguments
             throw new ArgumentException("String was not a ELLIPSE, RECTANGLE, or TRIANGLE");
+        }
+
+        /// <summary>
+        /// Fills a supplied properties with the values from this shape
+        /// </summary>
+        /// <param name="properties">Properties to fill</param>
+        public void fillProperties(IShapeProperties properties)
+        {
+            properties.ShapeLocation = this.Location;
+            properties.ShapeRotation = this.Rotation;
+            properties.ShapeScale = this.Scale;
+            properties.ShapeSize = this.Size;
+            properties.ShapeTranslation = this.Translation;
+            properties.ShapeType = this.Type;
+        }
+
+        /// <summary>
+        /// Sets this shape's values to the ones supplied in the properties
+        /// </summary>
+        /// <param name="properties">the properties to set from</param>
+        public void updateFromProperties(IShapeProperties properties)
+        {
+            this.Location = properties.ShapeLocation;
+            this.Rotation = properties.ShapeRotation;
+            this.Scale = properties.ShapeScale;
+            this.Size = properties.ShapeSize;
+            this.Translation = properties.ShapeTranslation;
+            this.Type = properties.ShapeType;
         }
 
     }
